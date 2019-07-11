@@ -1,10 +1,3 @@
 'use strict';
 
-module.exports = function collectSameElements(collectionA, objectB) {
-  let result = [];
-  collectionA.forEach(x => {
-    if(objectB.value.find(y => x.key === y) != undefined) 
-      result.push(x.key);
-  });
-  return result;
-}
+module.exports = (collectionA, objectB) => collectionA.map(x => x.key).filter(x => objectB.value.find(y => x === y) != undefined)
